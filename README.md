@@ -13,10 +13,16 @@ Ter instalado:
 
 ### Como executar
 
-  Entre no diretório blog e execute:
+1.  Entre no diretório blog e execute Execute as migrations.
+  ~~~
+  python3 manage.py migrate
+  python3 manage.py makemigrations fga
+  ~~~
+
+2. Execute a aplicação:
 
   ~~~
   python3 manage.py runserver
   ~~~
   
-  Acesse: http://127.0.0.1:8000
+    Acesse: http://127.0.0.1:8000
