@@ -15,8 +15,8 @@ Ter instalado:
 
 1.  Entre no diretório blog e execute Execute as migrations.
   ~~~
-  python3 manage.py migrate
   python3 manage.py makemigrations fga
+  python3 manage.py migrate
   ~~~
 
 2. Execute a aplicação:
@@ -26,3 +26,4 @@ Ter instalado:
   ~~~
   
     Acesse: http://127.0.0.1:8000
+

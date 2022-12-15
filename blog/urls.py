@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from fga.views import index
 
 urlpatterns = [
-    path('users/', include('fga.urls'))
+    path('', include('fga.urls'))
 ]
