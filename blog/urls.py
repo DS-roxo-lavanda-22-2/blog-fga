@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from fga.views import index
+from login.views import login
 
 urlpatterns = [
-    path('', include('fga.urls'))
+    path('', include('fga.urls')),
+    path('', include('login.urls'))
 ]
