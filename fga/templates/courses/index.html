@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/courses.css' %}"/> -->
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Blog da FGA</div>
+
+        <div>
+          <ul class="menu__list">
+            <li><a href="">Notícias</a></li>
+
+            <li><a href="">Cursos</a></li>
+
+            <li><a href="">Estrutura</a></li>
+
+            <li><a href="">Empresas</a></li>
+
+            <li><a href="">Equipes</a></li>
+
+            <li><a href="">Administração</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="course-container">
+      <h1>{{course.title}}</h1>
+    </div>
+  </body>
+</html>

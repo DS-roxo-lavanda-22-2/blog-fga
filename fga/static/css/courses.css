@@ -1,0 +1,67 @@
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+
+li,
+
+a,
+
+button {
+
+  color: #fff;
+
+  font-weight: 500;
+
+  font-size: 15px;  
+
+  text-decoration: none;
+
+  list-style: none;
+
+}
+
+body {
+
+  font-family: 'Poppins', sans-serif;
+
+  color: #fff;
+
+}
+
+.logo {
+
+  font-weight: 500;
+
+  font-size: 15px;
+
+}
+
+.navbar {
+
+  background-color: #21827B;
+
+  display: flex;  
+
+  justify-content: space-between;
+
+  padding: 25px 80px;
+
+}
+
+.menu__list {
+
+  color: #fff;
+
+  display: flex;
+
+  gap: 30px;  
+
+}
