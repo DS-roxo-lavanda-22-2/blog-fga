@@ -33,6 +33,7 @@ def login(request):
                 if user.username == username:
                     if user.password == password:
                         #return render(request,'login/test.html',)
+                        pass
                 else:
                     form = Login()
             else:
