@@ -1,0 +1,13 @@
+{% load static %}
+<html lang="en">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/> -->
+<body>
+    <div class="container">
+        <form method="post">
+          {% csrf_token %}
+          {{form}}
+          <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
