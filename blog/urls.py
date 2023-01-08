@@ -19,7 +19,8 @@ from fga.views import index
 from login.views import login
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include('fga.urls')),
     path('', include('login.urls')),
-    path('admin/', admin.site.urls)
+    
 ]

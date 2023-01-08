@@ -4,4 +4,3 @@ from .models import User
 
 # Register your models here.
 admin.site.register(Noticia)
-admin.site.register(Noticia)
