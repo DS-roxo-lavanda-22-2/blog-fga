@@ -20,5 +20,6 @@ from login.views import login
 
 urlpatterns = [
     path('', include('fga.urls')),
-    path('', include('login.urls'))
+    path('', include('login.urls')),
+    path('admin/', admin.site.urls)
 ]
