@@ -1,6 +1,6 @@
 {% load static %}
 <html lang="en">
-  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/courses.css' %}"/> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/courses.css' %}"/>
   <body>
     <header>
       <nav class="navbar">
@@ -24,8 +24,46 @@
       </nav>
     </header>
     
-    <div class="course-container">
-      <h1>{{course.title}}</h1>
-    </div>
+    <section class="nome__curso">
+
+      <div class="img__curso">
+          {%block 'imagem-curso'%}
+          <!-- <img src="{% static '{{ course.icon }}' %}"/>      
+   -->        {%endblock%}
+      </div>
+
+     <h1>{{ course.title }}</h1>
+     
+      <div class="dados__curso">
+          {{ course.duration }}<br/>
+          {{ course.description }}<br/>
+          {{ course.credit_number }}<br/>
+          {{ course.icon }}
+      </div>
+      
+  </section>
+
+  <section class="fluxograma">
+      <h1>Fluxograma</h1>
+
+      <div class="img__fluxograma">
+          {%block 'imagem-fluxo'%}
+          {%endblock%}
+      </div>
+
+      <button class="download__btn">
+          Baixar PDF
+      </button>
+  </section>
+
+  
+  <section>
+      <div class="sobre__curso">
+          <h1>Um pouco sobre o curso</h1>            
+          <p class="descricao__curso">
+            {{ course.description }}
+          </p>
+      </div>
+  </section>
   </body>
 </html>

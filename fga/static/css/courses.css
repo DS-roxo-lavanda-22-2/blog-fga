@@ -1,67 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
 * {
-
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
-
 }
 
-
-
 li,
-
 a,
-
 button {
-
   color: #fff;
-
   font-weight: 500;
-
   font-size: 15px;  
-
   text-decoration: none;
-
   list-style: none;
-
 }
 
 body {
+  font-family: 'Poppins', sans-serif; 
+}
 
-  font-family: 'Poppins', sans-serif;
-
-  color: #fff;
-
+h1 {
+  color: black;
 }
 
 .logo {
-
+  color: #fff;
   font-weight: 500;
-
   font-size: 15px;
-
 }
 
 .navbar {
-
   background-color: #21827B;
-
   display: flex;  
-
   justify-content: space-between;
-
   padding: 25px 80px;
-
 }
 
 .menu__list {
-
   color: #fff;
-
   display: flex;
-
   gap: 30px;  
+}
 
+.nome__curso {
+  display: flex;
+  padding-top: 50px;
+  padding-left: 80px;
+}
+
+.img__curso {
+  background-color: gray;
+  border-radius: 6px;
+  width: 220px;
+  height: 170px;
+  flex-direction: row
+}
+
+.dados__curso {    
+  padding-left: 20px;
+}
+
+.curso {    
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.curso, .periodo {
+  padding-top: 20px;
+}
+
+.curso,
+.periodo,
+.duracao,
+.creditos {
+  font-weight: 500;
+}
+
+.creditos {
+  color: #29B260;
+}
+
+h1 {
+  padding-bottom: 20px;
+}
+
+.fluxograma {
+  padding: 80px;
+}
+
+.img__fluxograma {
+  background-color: gray;
+  border-radius: 6px;
+  width: 100%;
+  height: 450px;
+}
+
+.download__btn {
+  color: #fff;
+  font-weight: bold;
+  background-color: #8280F1;
+  border: none;
+  border-radius: 6px;
+  width: 120px;
+  height: 40px;
+  margin-top: 18px;
+  margin-left: 91%;
+  cursor: pointer;
+}
+
+.download__btn:hover {
+  transition: all 0.5;
+}
+
+.sobre__curso {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.descricao__curso {
+  text-align: justify;
 }
