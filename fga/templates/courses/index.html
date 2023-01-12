@@ -27,18 +27,13 @@
     <section class="nome__curso">
 
       <div class="img__curso">
-          {%block 'imagem-curso'%}
-          <!-- <img src="{% static '{{ course.icon }}' %}"/>      
-   -->        {%endblock%}
+          <img src="{{ course.icon }}" width="100px"/>
       </div>
-
-     <h1>{{ course.title }}</h1>
-     
       <div class="dados__curso">
-          {{ course.duration }}<br/>
+          <h1>{{ course.title }}</h1>
           {{ course.description }}<br/>
-          {{ course.credit_number }}<br/>
-          {{ course.icon }}
+          Duração do curso: {{ course.duration }}<br/>
+          Quantidade de créditos: {{ course.credit_number }}<br/>
       </div>
       
   </section>
@@ -47,8 +42,7 @@
       <h1>Fluxograma</h1>
 
       <div class="img__fluxograma">
-          {%block 'imagem-fluxo'%}
-          {%endblock%}
+          <img src="{% static 'img/Fluxograma.svg' %}" height="100%"/>
       </div>
 
       <button class="download__btn">

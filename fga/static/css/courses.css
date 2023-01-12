@@ -50,7 +50,7 @@ h1 {
 }
 
 .img__curso {
-  background-color: gray;
+  background-color: white;
   border-radius: 6px;
   width: 220px;
   height: 170px;
@@ -90,10 +90,11 @@ h1 {
 }
 
 .img__fluxograma {
-  background-color: gray;
+  background-color: white;
   border-radius: 6px;
   width: 100%;
-  height: 450px;
+  height: 800px;
+  /*height: 450px;*/
 }
 
 .download__btn {
