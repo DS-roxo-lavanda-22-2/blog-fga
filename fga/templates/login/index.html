@@ -1,12 +1,18 @@
-{% load static %}
+<!DOCTYPE html>
 <html lang="en">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/> -->
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit" value="Submit">
-        <button type="submit">Salvar</button>
+    <form action="{% url 'login'%}" method="post">{% csrf_token %}
+        <input type="text" placeholder="Username" name="username">
+        <br>
+        <br>
+        <input type="password" placeholder="Senha" name="senha">
+        <br>
+        <br>
+        <input type="submit" value="Login">
     </form>
 </body>
 </html>
