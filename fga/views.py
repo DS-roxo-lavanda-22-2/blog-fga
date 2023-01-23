@@ -1,47 +1,37 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate
-from .forms import Login
-from .models import User
+from django.contrib.auth.models import User
+from .models import Login
+from .forms import form_login
+
 
 
 def index(request):
-
     return render(request,'home/index.html' )
 
+#def index(request):
+#    data = {}
+#    data['logon'] = Login.objects.all()
+#    form = login()
+#   return render(request,'login/index.html', data)
 
-def login(request):
 
-    form = Login()
-    #(X) pegar os valores do form que são o username e password
-    #(X) buscar usuário no banco(model) com o username e checar se a senha é igual
+def novo_login(request):
+    form = form_login()
+    # (X) pegar os valores do form que são o username e password
+    # (X) buscar usuário no banco(model) com o username e checar se a senha é igual
 
     if request.method == "POST":
-        form = Login(request.POST)
-        #usuario = User(name='a', age='23', username='teste',password='senha')
-        #usuario.save()
-                
-        if form.is_valid(): 
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            
+        form = Login(request.POST or None)
 
-            if User.objects.filter(username=username):
+    return render(request, 'login/index.html', {"form": form})
 
-                user = User.objects.get(username=username)
-                
-                if user.username == username:
-                    if user.password == password:
-                        #return render(request,'login/test.html',)
-                        pass
-                else:
-                    form = Login()
-            else:
-                form = Login()
-                        
-        else:
-            form = Login()
+def cadastro(request):
+    if request.method == "GET":
+        return render(request, 'cadastro/index.html')
     else:
-        form = Login()
-
-    return render(request,'login/index.html',{"form": form} )
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+        return HttpResponse(username)

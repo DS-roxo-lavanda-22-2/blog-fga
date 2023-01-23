@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cadastro</title>
+</head>
+<body>
+    <form action="{% url 'cadastro'%}" method="post">{% csrf_token %}
+        <input type="text" placeholder="Username..." name="username">
+        <br>
+        <br>
+        <input type="email" placeholder="Email" name="email">
+        <br>
+        <br>
+        <input type="password" placeholder="Senha" name="senha">
+        <br>
+        <br>
+        <input type="submit" value="cadastrar">
+    </form>
+</body>
+</html>
