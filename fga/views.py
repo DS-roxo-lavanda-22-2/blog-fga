@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from .models import Login
+from .models import Noticia
 from .forms import form_login
 
 
@@ -49,3 +50,20 @@ def cadastro(request):
         user.save()
 
         return HttpResponse('Usuario cadastrado')
+
+def cad_noticia(request):
+    if request.method == "GET":
+        return render(request, 'cadastrar/noticias/index.html')
+    else:
+        titulo = request.POST.get('titulo')
+        subtitulo = request.POST.get('subtitulo')
+        descricao = request.POST.get('descricao')
+
+        noticia = Noticia.objects.filter(descricao=descricao).first() # impedir que envie duas vezes a mesma notícia.
+        
+        if noticia:
+            return HttpResponse('Notícia já existente.')
+
+        noticia = Noticia.objects.create(titulo=titulo, subtitulo=subtitulo, descricao=descricao)
+        noticia.save()
+        return HttpResponse('Notícia cadastrada')

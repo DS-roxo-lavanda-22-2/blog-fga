@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cadastrar noticias</title>
+</head>
+<body>
+    <form action="{% url 'cad_noticia'%}" method="post">{% csrf_token %}
+        <input type="text" placeholder="Título" name="titulo">
+        <br>
+        <br>
+        <input type="text" placeholder="Subtítulo" name="subtitulo">
+        <br>
+        <br>
+        <input type="text" placeholder="Conteúdo" name="descricao">
+        <br>
+        <br>
+        <input type="submit" value="cadastrar">
+    </form>
+</body>
+</html>
