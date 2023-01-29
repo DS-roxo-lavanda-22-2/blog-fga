@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Notícias</title>
+    <link rel="stylesheet" href="./cadastrar_noticias.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="noticias__container">
+
+            <div class="titulo__noticia boxes">
+                <label for="titulo"><strong>Título da Notícia:</strong></label>
+                <br>
+                <input type="text" id="titulo" name="titulo" class="input__title">
+            </div>
+
+            <div class="boxes">
+                <label for="subtitulo"><strong>Subtítulo:</strong></label>
+                <br>
+                <input type="text" id="titulo" name="titulo" class="input__subtitle">
+            </div>
+
+            <div class="boxes">
+                <label for="texto"><strong>Texto:</strong></label>
+                <br>
+                <input type="text" id="texto" name="texto" class="input__text">
+            </div>
+
+            <div class="boxes">
+                <label for="data"><strong>Data de Publicação:</strong></label>
+                <input type="date" id="date" name="date">
+                <label for="time"><strong>Horário de Publicação:</strong></label>
+                <input type="time" id="time" name="time">
+            </div>
+
+            <div class="boxes">
+                <label for="data"><strong>Data de Expiração:</strong></label>
+                <input type="date" id="date" name="date">
+
+                <label for="time"><strong>Horário de Expiração:</strong></label>
+                <input type="time" id="time" name="time">
+            </div>
+
+            <div class="boxes">
+                <p><strong>Categorias:</strong></p>
+                <input type="radio" id="tecnologia" name="categorias" value="tecnologia" checked>
+                <label for="tecnologia" class="label__box">Tecnologia</label>
+                
+                <input type="radio" id="avisos" name="categorias" value="avisos" checked>
+                <label for="avisos">Avisos</label>
+                
+                <input type="radio" id="feriados" name="categorias" value="feriados" checked>
+                <label for="feriados">Feriados</label>
+                
+            </div>
+
+            <div>
+                <button class="publicar__btn">Publicar</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
