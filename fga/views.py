@@ -58,7 +58,7 @@ def cad_noticia(request):
         subtitulo = request.POST.get('subtitulo')
         descricao = request.POST.get('descricao')
 
-        noticia = Noticia.objects.filter(descricao=descricao).first() # impedir que envie duas vezes a mesma notícia.
+        noticia = Noticia.objects.filter(titulo=titulo).first() # impedir que envie duas vezes a mesma notícia.
         
         if noticia:
             return HttpResponse('Notícia já existente.')
@@ -66,6 +66,21 @@ def cad_noticia(request):
         noticia = Noticia.objects.create(titulo=titulo, subtitulo=subtitulo, descricao=descricao)
         noticia.save()
         return HttpResponse('Notícia cadastrada')
+
+def del_noticia(request):
+    if request.method == "GET":
+        return render(request, 'deletar/noticias/index.html')
+    else:
+        titulo = request.POST.get('titulo')
+
+        noticia = Noticia.objects.filter(titulo=titulo).first() # pega a notícia
+        
+        if noticia: # checa se a notícia existe para deletar
+            noticia.delete()
+
+            return HttpResponse('Notícia já excluída.')
+            
+        return HttpResponse('Notícia inexistente.')
 
 
 def cad_equipe(request):
