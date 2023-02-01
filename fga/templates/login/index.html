@@ -2,17 +2,195 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="style.css" rel="stylesheet">
+    <style type="text/css">
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: #21827B;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .small {
+            font-size: 80%;
+            text-align: center;
+        }
+
+        .split-screen {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left {
+            height:200px;
+        }
+
+        .left, .right {
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .left {
+            background-image: url("cover.jpg");
+            background-size: cover;
+            background-repeat: no-repeat
+        }
+
+        .left .copy {
+            color: white;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .left p {
+            font-weight: 400;
+        }
+
+        .right .copy {
+            color: black;
+            text-align: center;
+        }
+
+        .right .copy {
+            color: black;
+            text-align: center;
+        }
+
+        .right .copy p {
+            margin: 1.5em 0;
+            font-size: 0.875rem;
+        }
+
+        .right form {
+            width: 328px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"] {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid #c4c4c4;
+            padding: 1em;
+            margin-bottom: 1.25rem;
+            font-size: 0.875rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .input-container.password input {
+            position: relative;
+        }
+
+        .input-container.password i {
+            position: absolute;
+            top: 42px;
+            right: 16px;
+        }
+
+
+        .signup-btn {
+            display: block;
+            width: 100%;
+            background: #21827B;
+            color: white;
+            font-weight: 700;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .signup-btn {
+            background: #21827B;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 900px) {
+            .split-screen{
+                flex-direction: row;
+                height: 100vh;
+            }
+
+            .left,
+            .right {
+                display: flex;
+                width: 50%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form action="{% url 'login'%}" method="post">{% csrf_token %}
-        <input type="text" placeholder="Username" name="username">
-        <br>
-        <br>
-        <input type="password" placeholder="Senha" name="senha">
-        <br>
-        <br>
-        <input type="submit" value="Login">
-    </form>
+    <div class="split-screen">
+        <div class="left">
+            <section class="copy">
+                <h1>Blog do FGA</h1>
+                <p>
+                    O Blog da FGA é o portal perfeito para se
+                    <br>atualizar sobre as notícias do nosso campus.
+                </p>
+            </section>
+        </div>
+
+        <div class="right">
+            <form action="{% url 'login'%}" method="post">{% csrf_token %}>
+                <!--Title-->
+                <section class="copy">
+                    <h2>Login</h2>
+                </section>
+                <!--Email-->
+                <div class="input-container email">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                </div>
+                <!--Password-->
+                <div class="container-password password">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password">
+
+                </div>
+                <!--Sign Up-->
+                <button class="signup-btn" type="submit">
+                    Sign up
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

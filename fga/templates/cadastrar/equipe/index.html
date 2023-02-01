@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cadastrar equipe</title>
+</head>
+<body>
+    <form action="{% url 'cad_equipe'%}" method="post">{% csrf_token %}
+        <input type="text" placeholder="Título" name="titulo">
+        <br>
+        <br>
+        <input type="text" placeholder="Subtítulo" name="subtitulo">
+        <br>
+        <br>
+        <input type="text" placeholder="Conteúdo" name="texto">
+        <br>
+        <br>
+        <input type="text" placeholder="Redes sociais" name="redes">
+        <br>
+        <br>
+        <input type="text" placeholder="Link" name="link">
+        <br>
+        <br>
+
+        <input type="submit" value="cadastrar equipe">
+    </form>
+</body>
+</html>

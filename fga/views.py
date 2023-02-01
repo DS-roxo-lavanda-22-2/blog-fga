@@ -2,9 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Login
-from .models import Noticia
-from .forms import form_login
+from .models import Noticia, Equipe
+
 
 
 
@@ -29,7 +28,7 @@ def novo_login(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponse('Autenticado')
+            return render(request,'home/index.html' )
         else:
             return HttpResponse('Email ou senha invalidos')
 
@@ -67,3 +66,23 @@ def cad_noticia(request):
         noticia = Noticia.objects.create(titulo=titulo, subtitulo=subtitulo, descricao=descricao)
         noticia.save()
         return HttpResponse('Notícia cadastrada')
+
+
+def cad_equipe(request):
+    if request.method == "GET":
+        return render(request, 'cadastrar/equipe/index.html')
+    else:
+        titulo = request.POST.get('titulo')
+        subtitulo = request.POST.get('subtitulo')
+        texto = request.POST.get('texto')
+        redes = request.POST.get('redes')
+        link = request.POST.get('link')
+
+        equipe = Equipe.objects.filter(texto=texto).first()  # impedir que envie duas vezes a mesma notícia.
+
+        if equipe:
+            return HttpResponse('Equipe já existente.')
+
+        equipe = Equipe.objects.create(titulo=titulo, subtitulo=subtitulo, texto=texto, redes=redes,link=link)
+        equipe.save()
+        return HttpResponse('Equipe cadastrada')

@@ -13,3 +13,11 @@ class Login(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Equipe(models.Model):
+    titulo = models.CharField(max_length=300)
+    subtitulo = models.CharField(max_length= 500)
+    texto= models.TextField()
+    redes = models.CharField(max_length= 20)
+    link = models.CharField(max_length=200)

@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from fga.views import novo_login,cadastro
+from fga.views import novo_login,cadastro, cad_equipe,cad_noticia
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('fga.urls')),
     path('login/', novo_login),
-    path('cadastro/', cadastro)
+    path('cadastro/', cadastro),
+    path('cadastrar/equipe/', cad_equipe),
+    path('cadastrar/noticias/', cad_noticia),
 
 ]
