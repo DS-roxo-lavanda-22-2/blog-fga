@@ -78,7 +78,7 @@ def del_noticia(request):
         if noticia: # checa se a notícia existe para deletar
             noticia.delete()
 
-            return HttpResponse('Notícia já excluída.')
+            return HttpResponse('Notícia foi excluída.')
             
         return HttpResponse('Notícia inexistente.')
 
