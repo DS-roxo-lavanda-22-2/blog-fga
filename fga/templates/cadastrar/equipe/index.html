@@ -1,28 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>cadastrar equipe</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Equipes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/equipe.css' %}"/>
 </head>
-<body>
-    <form action="{% url 'cad_equipe'%}" method="post">{% csrf_token %}
-        <input type="text" placeholder="Título" name="titulo">
-        <br>
-        <br>
-        <input type="text" placeholder="Subtítulo" name="subtitulo">
-        <br>
-        <br>
-        <input type="text" placeholder="Conteúdo" name="texto">
-        <br>
-        <br>
-        <input type="text" placeholder="Redes sociais" name="redes">
-        <br>
-        <br>
-        <input type="text" placeholder="Link" name="link">
-        <br>
-        <br>
 
-        <input type="submit" value="cadastrar equipe">
-    </form>
+<body>
+    <section class="container">
+        <form action="{% url 'cad_equipe'%}" method="post" class="noticias__container">{% csrf_token %}
+
+            <div class="titulo__noticia boxes">
+                <label for="titulo"><strong>Nome da Equipe:</strong></label>
+                <br>
+                <input type="text" name="titulo" class="input__title">
+            </div>
+
+            <div class="boxes">
+                <label for="subtitulo"><strong>Subtítulo:</strong></label>
+                <br>
+                <input type="text" name="subtitulo" class="input__subtitle">
+            </div>
+
+            <div class="boxes">
+                <label for="texto"><strong>Texto:</strong></label>
+                <br>
+                <input type="text"  name="texto" class="input__text">
+            </div>
+
+            <div class="boxes">
+                <label for="link"><strong>Link:</strong></label>
+                <br>
+                <input type="link"  name="link" class="input__subtitle">
+            </div>
+
+            <div class="boxes">
+                <label for="redes"><strong>Redes sociais:</strong></label>
+                <br>
+                <input type="link"  name="redes" class="input__subtitle">
+            </div>
+
+
+            <div>
+                <button class="publicar__btn">Publicar</button>
+            </div>
+        </form>
+    </section>
+
 </body>
+
 </html>

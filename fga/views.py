@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Noticia, Equipe
+from .models import Noticia, Equipe, Empresa
 
 
 
@@ -16,22 +16,23 @@ def index(request):
 #    form = login()
 #   return render(request,'login/index.html', data)
 
-
+#login usuario
 def novo_login(request):
     if request.method == "GET":
         return render(request, 'login/index.html')
     else:
         username = request.POST.get('username')
-        senha = request.POST.get('senha')
+        password = request.POST.get('password')
 
-        user = authenticate(username=username, password=senha)
+        user = authenticate(username=username, password=password)
 
-        if user is not None:
+        if user:
             login(request, user)
-            return render(request,'home/index.html' )
+            return HttpResponse('Login realizado')
         else:
             return HttpResponse('Email ou senha invalidos')
 
+#cadastro usuario
 def cadastro(request):
     if request.method == "GET":
         return render(request, 'cadastro/index.html')
@@ -50,6 +51,7 @@ def cadastro(request):
 
         return HttpResponse('Usuario cadastrado')
 
+#cadastrar noticias
 def cad_noticia(request):
     if request.method == "GET":
         return render(request, 'cadastrar/noticias/index.html')
@@ -58,7 +60,7 @@ def cad_noticia(request):
         subtitulo = request.POST.get('subtitulo')
         descricao = request.POST.get('descricao')
 
-        noticia = Noticia.objects.filter(titulo=titulo).first() # impedir que envie duas vezes a mesma notícia.
+        noticia = Noticia.objects.filter(titulo=titulo).values() # impedir que envie duas vezes a mesma notícia.
         
         if noticia:
             return HttpResponse('Notícia já existente.')
@@ -67,6 +69,7 @@ def cad_noticia(request):
         noticia.save()
         return HttpResponse('Notícia cadastrada')
 
+#deletar noticias
 def del_noticia(request):
     if request.method == "GET":
         return render(request, 'deletar/noticias/index.html')
@@ -82,7 +85,15 @@ def del_noticia(request):
             
         return HttpResponse('Notícia inexistente.')
 
+#listar noticias
+def ler_noticia(request):
+    data = {}
 
+    data["dataset"] = Noticia.objects.all()
+
+    return render(request,'listar/noticia/index.html', data)
+
+#cadastrar equipes
 def cad_equipe(request):
     if request.method == "GET":
         return render(request, 'cadastrar/equipe/index.html')
@@ -93,11 +104,51 @@ def cad_equipe(request):
         redes = request.POST.get('redes')
         link = request.POST.get('link')
 
-        equipe = Equipe.objects.filter(texto=texto).first()  # impedir que envie duas vezes a mesma notícia.
+        equipe = Equipe.objects.filter(titulo=titulo).values()
+
+        print(str(equipe))
 
         if equipe:
-            return HttpResponse('Equipe já existente.')
+            return HttpResponse('Equipe cadastrada')
 
-        equipe = Equipe.objects.create(titulo=titulo, subtitulo=subtitulo, texto=texto, redes=redes,link=link)
+        equipe = Equipe.objects.create(titulo=titulo, subtitulo=subtitulo, texto=texto, redes=redes, link=link)
         equipe.save()
         return HttpResponse('Equipe cadastrada')
+
+#listar equipe
+def ler_equipe(request):
+    data = {}
+
+    data["dataset"] = Equipe.objects.all()
+
+    return render(request,'listar/equipe/index.html', data)
+
+
+#cadastrar empresas
+def cad_empresa(request):
+    if request.method == "GET":
+        return render(request, 'cadastrar/empresa/index.html')
+    else:
+        titulo = request.POST.get('titulo')
+
+        subtitulo = request.POST.get('subtitulo')
+        texto = request.POST.get('texto')
+        redes = request.POST.get('redes')
+        link = request.POST.get('link')
+
+        empresa = Empresa.objects.filter(texto=texto).first()
+
+        if empresa:
+            return HttpResponse('Empresa já existente.')
+
+        empresa = Empresa.objects.create(titulo=titulo, subtitulo=subtitulo, texto=texto, redes=redes, link=link)
+        empresa.save()
+        return HttpResponse('Empresa cadastrada')
+
+#listar empresa
+def ler_empresa(request):
+    data = {}
+
+    data["dataset"] = Empresa.objects.all()
+
+    return render(request,'listar/empresa/index.html', data)

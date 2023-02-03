@@ -1,22 +1,21 @@
 
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Notícias</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/noticias.css' %}"/>
+    <title>Cadastro de Empresas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/empresa.css' %}"/>
 </head>
 
 <body>
     <section class="container">
-        <form action="{% url 'cad_noticia'%}" method="post" class="noticias__container" >{% csrf_token %}
+        <form action="{% url 'cad_equipe'%}" method="post" class="noticias__container">{% csrf_token %}
 
             <div class="titulo__noticia boxes">
-                <label for="titulo"><strong>Título da Notícia:</strong></label>
+                <label for="titulo"><strong>Nome da Equipe:</strong></label>
                 <br>
                 <input type="text" name="titulo" class="input__title">
             </div>
@@ -30,7 +29,19 @@
             <div class="boxes">
                 <label for="texto"><strong>Texto:</strong></label>
                 <br>
-                <input type="text" name="descricao" class="input__text">
+                <input type="text"  name="texto" class="input__text">
+            </div>
+
+            <div class="boxes">
+                <label for="link"><strong>Link:</strong></label>
+                <br>
+                <input type="link"  name="link" class="input__subtitle">
+            </div>
+
+            <div class="boxes">
+                <label for="redes"><strong>Redes sociais:</strong></label>
+                <br>
+                <input type="link"  name="redes" class="input__subtitle">
             </div>
 
             <div>

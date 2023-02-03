@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar empresa</title>
+</head>
+<body>
+    <div class="main">
+
+        {% for data in dataset %}.
+
+            {{ data.titulo }}<br/>
+            {{ data.subtitulo }}<br/>
+            {{ data.texto }}<br/>
+            {{ data.redes }}<br/>
+            {{ data.link }}<br/>
+            <hr/>
+
+        {% endfor %}
+    </div>
+
+</body>
+</html>

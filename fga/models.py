@@ -3,8 +3,8 @@ from django.db import models
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=300)
-    subtitulo = models.CharField(max_length= 500)
-    descricao = models.TextField()
+    subtitulo = models.CharField(max_length=500, null=True)
+    descricao = models.TextField(null=True)
     data_publicacao = models.DateTimeField(auto_now_add=True)
 
 class Login(models.Model):
@@ -16,6 +16,13 @@ class Login(models.Model):
 
 
 class Equipe(models.Model):
+    titulo = models.CharField(max_length=300)
+    subtitulo = models.CharField(max_length= 500)
+    texto= models.TextField()
+    redes = models.CharField(max_length= 20)
+    link = models.CharField(max_length=200)
+
+class Empresa(models.Model):
     titulo = models.CharField(max_length=300)
     subtitulo = models.CharField(max_length= 500)
     texto= models.TextField()
