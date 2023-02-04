@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from fga.views import novo_login,cadastro, cad_equipe,cad_noticia, cad_empresa, ler_noticia, ler_empresa, ler_equipe
+from fga.views import novo_login,cadastro, cad_equipe,cad_noticia, cad_empresa, ler_noticia, ler_empresa, ler_equipe, administracao
 
 
 urlpatterns = [
@@ -29,5 +29,6 @@ urlpatterns = [
     path('listar/noticias/', ler_noticia),
     path('listar/equipe/', ler_equipe),
     path('listar/empresa/', ler_empresa),
+    path('gestao/', administracao),
 
 ]

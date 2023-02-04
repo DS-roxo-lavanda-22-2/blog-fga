@@ -1,8 +1,9 @@
 from django.urls import path, include
-# from django.contrib import admin
+from django.contrib import admin
 from . import views
 
 urlpatterns = [
+    path('admin', admin.site.urls),
     path('login/', views.novo_login, name='login'),
     path('', views.index, name='index'),
     path('cadastro/', views.cadastro, name = 'cadastro'),
@@ -13,4 +14,5 @@ urlpatterns = [
     path('listar/noticias/' ,views.ler_noticia, name='ler_noticia'),
     path('listar/equipe/' ,views.ler_equipe, name='ler_equipe'),
     path('listar/empresa/' ,views.ler_empresa, name='ler_empresa'),
+    path('gestao/', views.administracao, name='gestao')
 ]

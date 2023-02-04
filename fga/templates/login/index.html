@@ -41,6 +41,13 @@
                 <button class="signup-btn" type="submit">
                     Entrar
                 </button>
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags %}
+                            {{ message }}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </form>
         </div>
     </div>

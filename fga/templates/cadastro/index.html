@@ -1,21 +1,44 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>cadastro</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}"/>
 </head>
 <body>
-    <form action="{% url 'cadastro'%}" method="post">{% csrf_token %}
-        <input type="text" placeholder="Username..." name="username">
-        <br>
-        <br>
-        <input type="email" placeholder="Email" name="email">
-        <br>
-        <br>
-        <input type="password" placeholder="Senha" name="senha">
-        <br>
-        <br>
-        <input type="submit" value="cadastrar">
-    </form>
+    <div class="sign__parent">
+        <div class="right">
+            <form action="{% url 'cadastro'%}" method="post">{% csrf_token %}
+                <!--Title-->
+                <section class="copy">
+                    <h2>Cadastro</h2>
+                </section>
+                <!--Email-->
+                <div class="input-container email">
+                    <label for="email">Nome</label>
+                    <input id="text" type="text" name="username">
+                </div>
+                <!--Email-->
+                <div class="input-container email">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                </div>
+                <!--Password-->
+                <div class="container-password password">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="senha">
+
+                </div>
+                <!--Sign Up-->
+                <button class="signup-btn" type="submit">
+                    Cadastrar-se
+                </button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>

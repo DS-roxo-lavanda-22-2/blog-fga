@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from .models import Noticia, Equipe, Empresa
@@ -25,12 +26,13 @@ def novo_login(request):
         password = request.POST.get('password')
 
         user = authenticate(username=username, password=password)
-
+        print(bool(user))
         if user:
             login(request, user)
-            return HttpResponse('Login realizado')
+            return render(request,'administracao/index.html')
         else:
-            return HttpResponse('Email ou senha invalidos')
+            messages.success(request, "Email ou senha invalidos")
+            return redirect('login')
 
 #cadastro usuario
 def cadastro(request):
@@ -152,3 +154,6 @@ def ler_empresa(request):
     data["dataset"] = Empresa.objects.all()
 
     return render(request,'listar/empresa/index.html', data)
+
+def administracao(request):
+    return render(request, 'administracao/index.html')

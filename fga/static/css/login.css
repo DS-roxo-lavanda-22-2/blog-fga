@@ -47,7 +47,7 @@ a:hover {
 }
 
 .left {
-    background-image: url("../img/cover.jpg");
+    background-image: url("../assets/cover.jpg");
     background-size: cover;
     background-repeat: no-repeat
 }
