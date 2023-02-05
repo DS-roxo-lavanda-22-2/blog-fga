@@ -157,3 +157,6 @@ def ler_empresa(request):
 
 def administracao(request):
     return render(request, 'administracao/index.html')
+
+def pagina_nao_encontrada(request, exception):
+    return render(request, 'errors/page_not_found.html')
