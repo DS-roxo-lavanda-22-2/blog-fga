@@ -9,7 +9,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}"/>
 </head>
 <body>
+    {% if status == -1 %}
+        <div class="alert" style="padding: 20px;
+        background-color: #f44336; color: white;">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{message}}</strong> 
+        </div>
+    {% endif %}
+    {% if status == 1 %}
+        <div class="alert" style="padding: 20px;
+        background-color: green; color: white;">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{message}}</strong> 
+        </div>
+    {% endif %}
     <div class="sign__parent">
+        
         <div class="right">
             <form action="{% url 'cadastro'%}" method="post">{% csrf_token %}
                 <!--Title-->
