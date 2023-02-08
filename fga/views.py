@@ -9,7 +9,8 @@ from .models import Noticia, Equipe, Empresa
 
 
 def index(request):
-    return render(request,'home/index.html' )
+    noticias = Noticia.objects.all()[:4]
+    return render(request,'home/index.html',{"noticias": noticias} )
 
 #def index(request):
 #    data = {}

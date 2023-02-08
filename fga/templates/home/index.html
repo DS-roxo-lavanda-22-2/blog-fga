@@ -1,9 +1,229 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
 <body>
-    <div class="container">
-        <h1>Blog FGA</h1>
-    </div>
+
+    <!--Navbar-->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Blog da FGA γ
+            </div>
+            <div>
+                <ul class="menu__list">
+                    <li><a href='/listar/noticias/'>Notícias</a></li>
+                    <li><a href='/cursos'>Cursos</a></li>
+                    <li><a href='/estrutura'>Estrutura</a></li>
+                    <li><a href='/listar/empresas/'>Empresas</a></li>
+                    <li><a href='/listar/equipes/'>Equipes</a></li>
+                    <li><a href='/gestao'>Administração</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--Capa-->
+    <section>
+        <div class="container">
+            <div class="hero__content">
+                <p class="title">Seja bem vindo ao <br />
+                    Blog da <span>FGA</span></p>
+
+                <p class="subtitle">O Blog da FGA foi criado em 2022 pelos alunos do Feudo Roxo <br />
+                    Lavanda para a disciplina de Desenvolvimento de Software.</p>
+            </div>
+
+            <div className='hero__image'>
+                <img src="{% static 'assets/heroImg.png' %}" alt="" class="hero__img">
+            </div>
+        </div>
+    </section>
+
+    <!--Notícias-->
+    <section class="intro__container">
+        <h1 class="small__title">Últimas Notícias</h1>
+        <div class="parent">
+
+            {% for noticia in noticias %}
+                <div class="box__01">
+                    <h2 class="news__title">{{ noticia.titulo}}</h2>
+                    <p class="news__text">{{noticia.descricao}}</p>
+                </div>
+            {% endfor %}
+            <!-- <div class="box__02">
+                <h2 class="news__title">League of Legends: código-fonte vaza e Riot não cede à chantagem</h2>
+                <p class="news__text">A empresa afirmou que o código-fonte de League, TFT e da plataforma anticheat
+                    foram vazados por hackers.</p>
+            </div>
+
+            <div class="box__03">
+                <h2 class="news__title">Americanas tem dívidas milionárias com Samsung e Google</h2>
+                <p class="news__text">Entre os credores das Americanas, aparece a Ambev, que pertence aos principais
+                    acionistas da empresa, os bilionários Jorge Paulo Lemann, Marcel Telles e Beto Sicupira.</p>
+            </div>
+
+            <div class="box__04">
+                <h2 class="news__title">Netflix: confira os lançamentos do streaming em fevereiro</h2>
+                <p class="news__text">Entre os destaques do mês estão a 4ª temporada de You, os novos episódios de
+                    Outer Banks e o filme de comédia romântica Na Sua Casa ou na Minha?.</p>
+            </div> -->
+        </div>
+    </section>
+
+    <!--Cursos-->
+    <section class="course__container">
+        <h1 class="small__title">Cursos</h1>
+        <div class="parent__courses">
+            <div class="course__01">
+                <h2 class="course__name">Engenharia</h2>
+                <img src="{% static 'assets/engenhariaImg.png' %}" alt="" class="icons__items">
+                <br />
+                <button onclick="location.href ='/curso/engenharia'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="course__02">
+                <h2 class="course__name">Engenharia Aeroespacial</h2>
+                <img src="{% static 'assets/aeroImg.png' %}" alt="" class="icons__items">
+                <br />
+                <button onclick="location.href = '/curso/aeroespacial'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="course__03">
+                <h2 class="course__name">Engenharia Automotiva</h2>
+                <img src= "{% static 'assets/autoImg.png' %}" alt="" class="icons__items">
+                <br />
+                <button onclick="location.href='/curso/automotiva'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="course__04">
+                <h2 class="course__name">Engenharia de Energia</h2>
+               <img src="{% static 'assets/energiaImg.png' %}" alt="" class="icons__items">
+                <br />
+                <button onclick="location.href='/curso/energia'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="course__05">
+                <h2 class="course__name">Engenharia Eletrônica</h2>
+                <img src="{% static 'assets/eletronicaImg.png' %}" alt="" class="icons__items">
+                <br />
+                <button onclick="location.href='/curso/eletronica'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="course__06">
+                <h2 class="course__name">Engenharia de Software</h2>
+                <img src="{% static 'assets/softwareImg.png' %}" alt="" class="icons__items">
+                <br />
+                <button onclick="location.href='/curso/software'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Sobre nós-->
+    <section class="about__container">
+        <div class="about__parent">
+
+            <div class="image__box">
+              <img src="{% static 'assets/AboutImg.png' %}" alt="" class="about__img">
+            </div>
+
+            <div class="text__box">
+                <p class="about__title">Quem somos?</p>
+                <p class="about__text">Nós somos o <span class="roxo__lavanda">Feudo Roxo Lavanda</span>,
+                grupo formado durante as aulas da disciplina de Desenvolvimento de Software ministradas pelo
+                professor Sérgio Freitas. Nosso feudo é composto pelos alunos: Benjamim, Edyane, Lucas, Moacir
+                e Victor.
+                </p>
+
+                <p class="about__text">Nosso objetivo é informar e ajudar não só os alunos, como também toda a
+                  comunidade da FGA.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--Páginas-->
+    <section>
+        <div class="items__parent">
+            <div class="item__01">
+                <img src="{% static 'assets/equipesImg.png' %}" alt="" class="icons__items">
+                <h4 class="item__title">Equipes</h4>
+                <p class="item__info">Aqui você encontra informações sobre as Equipes de Competição da FGA</p>
+                <button onclick="location.href='/listar/equipes/'"class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="item__02">
+                <img src="{% static 'assets/empresasImg.png' %}" alt="" class="icons__items">
+                <h4 class="item__title">Empresas</h4>
+                <p class="item__info">Aqui você encontra informações sobre as Empresas Júniores da FGA</p>
+                <button onclick="location.href='/listar/empresas/'" class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+
+            <div class="item__03">
+                <img src="{% static 'assets/paginasImg.png' %}" alt="" class="icons__items">
+                <h4 class="item__title">Páginas sobre a FGA</h4>
+                <p class="item__info">Aqui você encontra dicas de páginas que produzem conteúdo sobre a FGA</p>
+                <button class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Biblioteca-->
+    <section class="biblioteca__section">
+        <div class="biblioteca__box">
+            <h1>Funcionamento da Biblioteca</h1>
+            <img src= "{% static 'assets/BiblioImg.png' %}" alt="" class="biblio__img">
+            <div class="infos__biblio">
+              <p>Segunda a sexta-feira (exceto feriados) <br />
+                das 7h às 18h30.</p>
+                <br />
+              <p>Telefone(61) 3107-8942</p>
+                <br />
+              <p>E-mail: bibliotecafga@unb.br</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer__box">
+        <div class="footer__container">
+            <div class="footer__box-01">
+                <h3 class="footer__title">Blog da FGA γ</h3>
+                <p classe="footer__description">©Feudo Roxo Lavanda. Todos os direitos Reservados.</p>
+            </div>
+
+            <div class="footer__box-02">
+                <h4 class="footer__subtitle">Notícias</h4>
+                <div class="footer__description">
+                    <p>Últimas Notícias</p>
+                    <p>API Utilizada</p>
+                </div>
+            </div>
+
+            <div class="footer__box-03">
+                <h4 class="footer__subtitle">Cursos</h4>
+                <div class="footer__description">
+                    <p>Cursos</p>
+                    <p>Informações Adicionais</p>
+                </div>
+            </div>
+
+            <div class="footer__box-04">
+                <h4 class="footer__subtitle">Empresas e Equipes</h4>
+                <div class="footer__description">
+                    <p>Empresas Júniores</p>
+                    <p>Equipes de Competição</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
