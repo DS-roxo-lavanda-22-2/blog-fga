@@ -6,6 +6,7 @@ class Noticia(models.Model):
     subtitulo = models.CharField(max_length=500, null=True)
     descricao = models.TextField(null=True)
     data_publicacao = models.DateTimeField(auto_now_add=True)
+    imagem = models.TextField(max_length=20000, null=True)
 
 class Login(models.Model):
     email = models.CharField(max_length=100)

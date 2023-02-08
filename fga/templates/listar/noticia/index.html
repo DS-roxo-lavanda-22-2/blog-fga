@@ -1,20 +1,159 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>listar noticias</title>
-</head>
-<body>
-    <div class="main">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/noticia.css' %}"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Blog da FGA γ</div>
 
-        {% for data in dataset %}.
+        <div>
+          <ul class="menu__list">
+            <li><a href="/listar/noticias/">Notícias</a></li>
+            <li><a href="/cursos">Cursos</a></li>
+            <li><a href="/estrutura">Estrutura</a></li>
+            <li><a href="/listar/empresas/">Empresas</a></li>
+            <li><a href="/listar/equipes/">Equipes</a></li>
+            <li><a href="/gestao">Administração</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-            {{ data.titulo }}<br/>
-            {{ data.subtitulo }}<br/>
-            {{ data.descricao }}<br/>
-            <hr/>
+    <h2>Notícias</h2>
 
-        {% endfor %}
-    </div>
-</body>
+    <section class="parent__news">
+      {% for noticia in noticias %}
+        <div class="div1">
+            <img src="{{ noticia.imagem }}" alt="" class="img" />
+        </div>
+
+        <div class="div2">
+            <br />
+            <h1>{{noticia.titulo}}</h1>
+            <br />
+            <h5>{{noticia.subtitulo}}</h5>
+            <br />
+            <p>
+                {{noticia.descricao}}
+            </p>
+        </div>
+      {% endfor %}
+
+      <!-- <div class="div1">
+        <img src="./assets/fortnite.jpg" alt="" class="img" />
+      </div>
+
+      <div class="div2">
+        <br />
+        <h1>Fortnite: como marcar inimigos com agilidade?</h1>
+        <br />
+        <h5>Afinal, como marcar inimigos no Fortnite</h5>
+        <br />
+        <p>
+          Durantes as partidas do Battle Royale, seja você um veterano ou
+          iniciante no Battle Royale, é muito fácil perder adversário de vista e
+          acabar sendo pego de surpresa por um ângulo inesperado. Assim, é muito
+          importante prestar bastante atenção e, sempre que possível marcar a
+          localização dos inimigos — algo que vamos te ensinar a fazer agora
+          mesmo.
+        </p>
+        <br />
+        <p>
+          Com o lançamento da Temporada 1 do Capítulo 4, além de várias
+          parcerias icônicas o jogo recebeu um novo mapa cheio de lugares e
+          mecânicas inéditos, incluindo novas formas de marcar outros jogadores
+          no mapa.
+        </p>
+      </div> -->
+
+      <!-- <div class="div3">
+            <img src="./assets/placa.jpg" alt="" class="img">
+        </div>
+
+        <div>
+            <div class="div2">
+                <br>
+                <h1>RTX 4070 Ti vs RX 7900XT: veja comparativo das GPUs</h1>
+                <br>
+                <h5>Especificações das RTX 4070 Ti e RX 7900XT</h5>
+                <br>
+                <p>A GeForce RTX 4070 Ti é o primeiro modelo intermediário das novas GPUs Nvidia com arquitetura
+                Ada-Lovelace. Equipado com chip AD 104, ela chega com 7680 núcleos, e 12 GB de memória GDDR6X, 
+                mais rápida que o padrão GDDR6 ainda utilizado pela AMD, e largura de banda de 504,2 GB/s.</p>
+                <br>
+                <p>O barramento de memória é de 192 bit, e ela traz apenas 60 núcleos Ray Tracing. Suas frequências
+                de operação, por outro lado, são bem impressionantes, com clocks base e em boost de 2,3 GHz e 2,6
+                GHz respectivamente.</p>
+            </div>
+        </div>
+
+        <div class="div4">
+            <img src="./assets/dragon.jpg" alt="" class="img">
+        </div>
+
+        <div>
+            <div class="div2">
+                <br>
+                <h1>Os 10 melhores vilões da história de Dragon Ball</h1>
+                <br>
+                <h5>Os criadores de Dragon Ball sempre fazem questão de criar oponentes carismáticos e, principalmente, desafiadores para Goku. </h5>
+                <br>
+                <p>Broly: O antagonista foi introduzido no filme Dragon Ball Z: O Poder Invencível. Também conhecido
+                como O Lendário Super Sayajin, o guerreiro aparece a cada 1000 anos. Por seu poder de luta gigantesco,
+                e com os traumas que sofreu no nascimento, o vilão é maníaco e tem um ódio mortal por Goku.</p>
+                <br>
+                <p>Cell: O supervilão é um Bio-androide criado para ser o guerreiro perfeito e possui todos os poderes e habilidades
+                dos melhores lutadores que já passaram pela Terra. A primeira aparição do vilão deu-se na Saga Cell de Dragon Ball Z,
+                mas ele acabou retornando ao anime futuramente.</p>
+            </div>
+        </div> -->
+    </section>
+
+    <section class="footer__box">
+      <div class="footer__container">
+        <div class="footer__box-01">
+          <h3 class="footer__title">Blog da FGA γ</h3>
+          <p classe="footer__description">
+            ©Feudo Roxo Lavanda. Todos os direitos Reservados.
+          </p>
+        </div>
+
+        <div class="footer__box-02">
+          <h4 class="footer__subtitle">Notícias</h4>
+          <div class="footer__description">
+            <p>Últimas Notícias</p>
+            <p>API Utilizada</p>
+          </div>
+        </div>
+
+        <div class="footer__box-03">
+          <h4 class="footer__subtitle">Cursos</h4>
+          <div class="footer__description">
+            <p>Cursos</p>
+            <p>Informações Adicionais</p>
+          </div>
+        </div>
+
+        <div class="footer__box-04">
+          <h4 class="footer__subtitle">Empresas e Equipes</h4>
+          <div class="footer__description">
+            <p>Empresas Júniores</p>
+            <p>Equipes de Competição</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

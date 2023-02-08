@@ -123,14 +123,13 @@ span {
 }
 
 .news__text {
-    height: 60%;
+    height: 40%;
     font-size: 14px;
     padding: 0px 45px 0px 45px;
     overflow-x: hidden;
     text-overflow: ellipsis;
     -ms-overflow-style: none;
     scrollbar-width: none;
-
 }
 
 .course__container {

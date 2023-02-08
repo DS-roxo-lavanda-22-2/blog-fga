@@ -92,9 +92,9 @@ def del_noticia(request):
 
 #listar noticias
 def ler_noticia(request):
-    data = {}
-    data["dataset"] = Noticia.objects.all()
-    return render(request,'listar/noticia/index.html', data)
+
+    noticias = Noticia.objects.all()
+    return render(request,'listar/noticia/index.html', { "noticias": noticias})
 
 #cadastrar equipes
 def cad_equipe(request):
