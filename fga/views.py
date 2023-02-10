@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Noticia, Equipe, Empresa
+from .models import Noticia, Equipe, Empresa, Curso
 
 
 
@@ -158,4 +158,9 @@ def pagina_nao_encontrada(request, exception):
 
 def curso(request, nome):
     print('nome curso: ', nome)
-    return render(request, 'curso/index.html')
+    curso = Curso.objects.filter(titulo=nome).first()
+    curso.icone = 'assets/cursos/'+ curso.titulo + '-icone.jpg'
+    curso.fluxograma = 'assets/cursos/fluxo_'+ curso.titulo + '.PNG'
+    print(curso)
+
+    return render(request, 'curso/index.html', {'curso':curso})

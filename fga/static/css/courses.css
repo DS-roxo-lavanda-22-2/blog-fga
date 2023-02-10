@@ -60,6 +60,9 @@ h1 {
 .dados__curso {    
   padding-left: 20px;
 }
+.dados__curso h1{
+  text-transform: uppercase;
+}
 
 .curso {    
   font-size: 21px;
