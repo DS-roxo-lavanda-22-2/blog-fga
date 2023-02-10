@@ -153,6 +153,26 @@ def ler_empresa(request):
     empresas = Empresa.objects.all()
     return render(request,'listar/empresa/index.html', {"empresas": empresas})
 
+#listar cursos
+def ler_cursos(request):
+    return render(request,'listar/cursos/index.html')
+
+#abrir cada curso separadamente
+def show_aero(request):
+    return render(request,'cursos/aeroespacial.html')
+def show_auto(request):
+    return render(request,'cursos/automotiva.html')
+def show_eletro(request):
+    return render(request,'cursos/eletronica.html')
+def show_ener(request):
+    return render(request,'cursos/energia.html')
+def show_soft(request):
+    return render(request,'cursos/software.html')
+
+
+
+
+#adm
 def administracao(request):
     return render(request, 'administracao/index.html')
 

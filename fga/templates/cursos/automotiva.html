@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia Automotiva</title>
+    <link rel="stylesheet" href="{% static 'css/curso.css' %}">
+</head>
+
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Blog da FGA γ</div>
+
+        <div>
+          <ul class="menu__list">
+            <li><a href="/listar/noticias/">Notícias</a></li>
+            <li><a href="/cursos">Cursos</a></li>
+            <li><a href="/estrutura">Estrutura</a></li>
+            <li><a href="/listar/empresas/">Empresas</a></li>
+            <li><a href="/listar/equipes/">Equipes</a></li>
+            <li><a href="/gestao">Administração</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="descricao">
+        <p class="curso">Engenharia Automotiva</p>
+        <hr>
+        <p class="periodo">Diurno</p>
+        <p class="duracao">9/16 Semestres</p>
+        <p class="creditos">Quantidade de Créditos</p>
+    </div>
+
+    <section class="nome__curso">
+        <div class="img__curso">
+            <img src="{% static 'assets/auto.jpg' %}" alt="" class="img__curso">
+        </div>
+
+       
+    </section>
+
+    <section class="fluxograma">
+        <h1>Fluxograma</h1>
+
+        <div class="img__fluxograma">
+            <img src="{% static 'assets/fluxo_automotiva.PNG' %}" alt="" class="img__fluxo">
+        </div>
+
+        <button class="download__btn">
+            Baixar PDF
+        </button>
+    </section>
+
+
+    <section>
+        <div class="sobre__curso">
+            <h1>Um pouco sobre o curso</h1>
+            <p class="descricao__curso">
+                A engenharia automotiva é um ramo da engenharia mecânica especializado nos vários
+                tipos de veículos automóveis. Nela são aplicados elementos de ciências de base
+                e de engenharia, elementos de engenharia mecânica, eletrotécnica, eletrónica,
+                informática e de segurança e aperfeiçoamentos técnicos que respondem à evolução
+                tecnológica dos automóveis, no sentido de aumentar a qualidade, competitividade 
+                e a produtividade no setor automóvel.
+            </p>
+        </div>
+    </section>
+
+    <section class="footer__box">
+        <div class="footer__container">
+            <div class="footer__box-01">
+                <h3 class="footer__title">Blog da FGA γ</h3>
+                <p classe="footer__description">©Feudo Roxo Lavanda. Todos os direitos Reservados.</p>
+            </div>
+
+            <div class="footer__box-02">
+                <h4 class="footer__subtitle">Notícias</h4>
+                <div class="footer__description">
+                    <p>Últimas Notícias</p>
+                    <p>API Utilizada</p>
+                </div>
+            </div>
+
+            <div class="footer__box-03">
+                <h4 class="footer__subtitle">Cursos</h4>
+                <div class="footer__description">
+                    <p>Cursos</p>
+                    <p>Informações Adicionais</p>
+                </div>
+            </div>
+
+            <div class="footer__box-04">
+                <h4 class="footer__subtitle">Empresas e Equipes</h4>
+                <div class="footer__description">
+                    <p>Empresas Júniores</p>
+                    <p>Equipes de Competição</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+</body>
+</html>
