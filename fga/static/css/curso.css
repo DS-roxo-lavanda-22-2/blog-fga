@@ -51,9 +51,11 @@ body {
     border-radius: 6px;
     width: 220px;
     height: 170px;
+    object-fit: cover; /*
     flex-direction: row;
     padding-left: 80px;
     ;
+    */
 }
 
 .dados__curso {
