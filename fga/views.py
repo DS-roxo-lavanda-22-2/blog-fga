@@ -64,6 +64,8 @@ def cad_noticia(request):
         titulo = request.POST.get('titulo')
         subtitulo = request.POST.get('subtitulo')
         descricao = request.POST.get('descricao')
+        imagem = request.POST.get('image')
+        date = request.POST.get('date')
 
         noticia = Noticia.objects.filter(titulo=titulo).values() # impedir que envie duas vezes a mesma notícia.
         
@@ -71,7 +73,7 @@ def cad_noticia(request):
             message = { 'status': -1, 'message': 'A noticia já existe!'}
             return render(request, 'cadastrar/noticias/index.html', message)
 
-        noticia = Noticia.objects.create(titulo=titulo, subtitulo=subtitulo, descricao=descricao)
+        noticia = Noticia.objects.create(titulo=titulo, subtitulo=subtitulo, descricao=descricao, data_publicacao=date, imagem=imagem, )
         noticia.save()
         message = { 'status': 1, 'message': 'Noticia cadastrada com sucesso!'}
         return render(request, 'cadastrar/noticias/index.html', message)

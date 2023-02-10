@@ -1,16 +1,35 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Notícias</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/noticias.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/empresa.css' %}"/>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Blog da FGA γ
+            </div>
+
+            <div>
+                <ul class="menu__list">
+                    <li><a href="">Notícias</a></li>
+                    <li><a href="">Cursos</a></li>
+                    <li><a href="">Estrutura</a></li>
+                    <li><a href="">Empresas</a></li>
+                    <li><a href="">Equipes</a></li>
+                    <li><a href="">Administração</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <section class="container">
         {% if status == -1 %}
             <div class="alert" style="padding: 20px;
@@ -26,8 +45,7 @@
                 <strong>{{message}}</strong> 
             </div>
         {% endif %}
-        <form action="{% url 'cad_noticia'%}" method="post" class="noticias__container" >{% csrf_token %}
-
+        <form action="{% url 'cad_noticia'%}" method="post" class="noticias__container">{% csrf_token %}
             <div class="titulo__noticia boxes">
                 <label for="titulo"><strong>Título da Notícia:</strong></label>
                 <br>
@@ -37,19 +55,63 @@
             <div class="boxes">
                 <label for="subtitulo"><strong>Subtítulo:</strong></label>
                 <br>
-                <input type="text" name="subtitulo" class="input__subtitle">
+                <input type="text" id="subtitulo" name="subtitulo" class="input__subtitle">
             </div>
 
             <div class="boxes">
-                <label for="texto"><strong>Texto:</strong></label>
+                <label for="texto"><strong>Descrição:</strong></label>
                 <br>
-                <input type="text" name="descricao" class="input__text">
+                <input type="text" id="descricao" name="descricao" class="input__text">
+            </div>
+
+            <div class="boxes">
+                <label for="image"><strong>Link da Imagem:</strong></label>
+                <br>
+                <input type="url" id="image" name="image" >
+            </div>
+
+            <div class="boxes">
+                <label for="data"><strong>Data de Publicação:</strong></label>
+                <input type="date" id="date" name="date">
             </div>
 
             <div>
                 <button class="publicar__btn">Publicar</button>
             </div>
         </form>
+    </section>
+
+    <section class="footer__box">
+        <div class="footer__container">
+            <div class="footer__box-01">
+                <h3 class="footer__title">Blog da FGA γ</h3>
+                <p classe="footer__description">©Feudo Roxo Lavanda. Todos os direitos Reservados.</p>
+            </div>
+
+            <div class="footer__box-02">
+                <h4 class="footer__subtitle">Notícias</h4>
+                <div class="footer__description">
+                    <p>Últimas Notícias</p>
+                    <p>API Utilizada</p>
+                </div>
+            </div>
+
+            <div class="footer__box-03">
+                <h4 class="footer__subtitle">Cursos</h4>
+                <div class="footer__description">
+                    <p>Cursos</p>
+                    <p>Informações Adicionais</p>
+                </div>
+            </div>
+
+            <div class="footer__box-04">
+                <h4 class="footer__subtitle">Empresas e Equipes</h4>
+                <div class="footer__description">
+                    <p>Empresas Júniores</p>
+                    <p>Equipes de Competição</p>
+                </div>
+            </div>
+        </div>
     </section>
 
 </body>
