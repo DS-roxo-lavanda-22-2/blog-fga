@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Notícias</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/empresa.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/empresa.css' %}" />
 </head>
 
 <body>
@@ -19,12 +19,12 @@
 
             <div>
                 <ul class="menu__list">
-                    <li><a href="">Notícias</a></li>
-                    <li><a href="">Cursos</a></li>
-                    <li><a href="">Estrutura</a></li>
-                    <li><a href="">Empresas</a></li>
-                    <li><a href="">Equipes</a></li>
-                    <li><a href="">Administração</a></li>
+                    <li><a href='/listar/noticias/'>Notícias</a></li>
+                    <li><a href='/cursos'>Cursos</a></li>
+                    <li><a href='/estrutura'>Estrutura</a></li>
+                    <li><a href='/listar/empresas/'>Empresas</a></li>
+                    <li><a href='/listar/equipes/'>Equipes</a></li>
+                    <li><a href='/gestao'>Administração</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,18 +32,18 @@
 
     <section class="container">
         {% if status == -1 %}
-            <div class="alert" style="padding: 20px;
+        <div class="alert" style="padding: 20px;
             background-color: #f44336; color: white;">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                <strong>{{message}}</strong> 
-            </div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{message}}</strong>
+        </div>
         {% endif %}
         {% if status == 1 %}
-            <div class="alert" style="padding: 20px;
+        <div class="alert" style="padding: 20px;
             background-color: green; color: white;">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                <strong>{{message}}</strong> 
-            </div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{message}}</strong>
+        </div>
         {% endif %}
         <form action="{% url 'cad_noticia'%}" method="post" class="noticias__container">{% csrf_token %}
             <div class="titulo__noticia boxes">
@@ -67,7 +67,7 @@
             <div class="boxes">
                 <label for="image"><strong>Link da Imagem:</strong></label>
                 <br>
-                <input type="url" id="image" name="image" >
+                <input type="url" id="image" name="image">
             </div>
 
             <div class="boxes">
