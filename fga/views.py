@@ -122,9 +122,8 @@ def cad_equipe(request):
 
 #listar equipe
 def ler_equipe(request):
-    data = {}
-    data["dataset"] = Equipe.objects.all()
-    return render(request,'listar/equipe/index.html', data)
+    equipes = Equipe.objects.all()
+    return render(request,'listar/equipe/index.html', {"equipes": equipes})
 
 
 #cadastrar empresas
