@@ -1,13 +1,12 @@
 from django.db import models
 
 
-class Course(models.Model):
-    title = models.CharField(max_length=25)
-    duration = models.IntegerField()
-    description = models.CharField(max_length=150)
-    credit_number = models.IntegerField()
-    icon = models.CharField(max_length=150)
-    
+class Curso(models.Model):
+    titulo = models.CharField(max_length=25)
+    duracao = models.IntegerField()
+    descricao = models.CharField(max_length=150)
+    numero_credito = models.IntegerField()
+
 class Noticia(models.Model):
     titulo = models.CharField(max_length=300)
     subtitulo = models.CharField(max_length=500, null=True)

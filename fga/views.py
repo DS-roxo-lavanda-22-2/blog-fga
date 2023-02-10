@@ -156,5 +156,6 @@ def administracao(request):
 def pagina_nao_encontrada(request, exception):
     return render(request, 'errors/page_not_found.html')
 
-def curso(request):
+def curso(request, nome):
+    print('nome curso: ', nome)
     return render(request, 'curso/index.html')
