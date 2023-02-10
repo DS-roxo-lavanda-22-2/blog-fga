@@ -1,23 +1,86 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>listar equipe</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipes de Competição</title>
+    <link rel="stylesheet" href="{% static 'css/equipes.css' %}">
 </head>
+
 <body>
-    <div class="main">
 
-        {% for data in dataset %}.
+    <header>
+        <nav class="navbar">
+          <div class="logo">Blog da FGA γ</div>
+  
+          <div>
+            <ul class="menu__list">
+              <li><a href="/listar/noticias/">Notícias</a></li>
+              <li><a href="/cursos">Cursos</a></li>
+              <li><a href="/estrutura">Estrutura</a></li>
+              <li><a href="/listar/empresas/">Empresas</a></li>
+              <li><a href="/listar/equipes/">Equipes</a></li>
+              <li><a href="/gestao">Administração</a></li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    
+    <h1 class="equipe__title">Equipes de Competição</h1>
+    {% for equipe in equipes %}
+    <section>
+        <div class="container__equipes">
+            <div class="info__equipe">
+                <h1>{{ equipe.titulo }}</h1>
+                <small class="subtitles__equipes"><strong>{{ equipe.subtitulo }}</strong></small>
+                <p class="descricao__equipe">{{ equipe.texto }}</p>
 
-            {{ data.titulo }}<br/>
-            {{ data.subtitulo }}<br/>
-            {{ data.texto }}<br/>
-            {{ data.redes }}<br/>
-            {{ data.link }}<br/>
-            <hr/>
+                <img src="{% static 'assets/facebook.png' %}" alt="Facebook Icon" class="img__icons">
+                <img src="{% static 'assets/instagram.png' %}" alt="Instagram Icon" class="img__icons">
+                <img src="{% static 'assets/linkedin.png' %}" alt="LinkedIn Icon" class="img__icons">
+            </div>
 
-        {% endfor %}
-    </div>
+            <div class="container__img">
+                <img src="{{ equipe.imagem }}" alt="" class="equipes__img">
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    <section class="footer__box">
+        <div class="footer__container">
+            <div class="footer__box-01">
+                <h3 class="footer__title">Blog da FGA γ</h3>
+                <p classe="footer__description">©Feudo Roxo Lavanda. Todos os direitos Reservados.</p>
+            </div>
+
+            <div class="footer__box-02">
+                <h4 class="footer__subtitle">Notícias</h4>
+                <div class="footer__description">
+                    <p>Últimas Notícias</p>
+                    <p>API Utilizada</p>
+                </div>
+            </div>
+
+            <div class="footer__box-03">
+                <h4 class="footer__subtitle">Cursos</h4>
+                <div class="footer__description">
+                    <p>Cursos</p>
+                    <p>Informações Adicionais</p>
+                </div>
+            </div>
+
+            <div class="footer__box-04">
+                <h4 class="footer__subtitle">Empresas e Equipes</h4>
+                <div class="footer__description">
+                    <p>Empresas Júniores</p>
+                    <p>Equipes de Competição</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>

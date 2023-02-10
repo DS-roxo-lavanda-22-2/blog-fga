@@ -22,6 +22,7 @@ class Equipe(models.Model):
     texto= models.TextField()
     redes = models.CharField(max_length= 20)
     link = models.CharField(max_length=200)
+    imagem = models.TextField(max_length=20000, null=True)
 
 class Empresa(models.Model):
     titulo = models.CharField(max_length=300)
@@ -29,3 +30,5 @@ class Empresa(models.Model):
     texto= models.TextField()
     redes = models.CharField(max_length= 20)
     link = models.CharField(max_length=200)
+    imagem = models.TextField(max_length=20000, null=True)
+

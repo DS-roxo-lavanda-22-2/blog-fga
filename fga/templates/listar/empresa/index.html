@@ -1,23 +1,99 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Listar empresa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas Júniores</title>
+    <link rel="stylesheet" href="{% static 'css/empresas.css' %}">
 </head>
+
 <body>
-    <div class="main">
+    <header>
+      <nav class="navbar">
+        <div class="logo">Blog da FGA γ</div>
 
-        {% for data in dataset %}.
+        <div>
+          <ul class="menu__list">
+            <li><a href="/listar/noticias/">Notícias</a></li>
+            <li><a href="/cursos">Cursos</a></li>
+            <li><a href="/estrutura">Estrutura</a></li>
+            <li><a href="/listar/empresas/">Empresas</a></li>
+            <li><a href="/listar/equipes/">Equipes</a></li>
+            <li><a href="/gestao">Administração</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-            {{ data.titulo }}<br/>
-            {{ data.subtitulo }}<br/>
-            {{ data.texto }}<br/>
-            {{ data.redes }}<br/>
-            {{ data.link }}<br/>
-            <hr/>
+    <section>
+        <div class="title__box">
+            <h1>Empresas Júniores</h1>
+            <br>
+        </div>
+    </section>
+    {% for empresa in empresas %}
+    <section class="empresas__container">
+        <div class="flex-container">
+            <div class="flex-items">
+                <img src="{{ empresa.imagem }}" alt="" class="img__empresas">
+            </div>
 
-        {% endfor %}
-    </div>
+            <div class="flex-items">
+                <h1>{{ empresa.titulo }}</h1>
+                <br>
+                <small>{{ empresa.subtitulo }}</small>
+                <br>
+                <br>
+                <p>{{ empresa.texto }}</p>
+
+                <img src="{% static 'assets/facebook.png' %}" alt="Facebook Icon" class="img__icons">
+                <img src="{% static 'assets/instagram.png' %}" alt="Instagram Icon" class="img__icons">
+                <img src="{% static 'assets/linkedin.png' %}" alt="LinkedIn Icon" class="img__icons">
+
+                <br>
+                <button class="btn__saiba-mais">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+
+    <section class="footer__box">
+        <div class="footer__container">
+            <div class="footer__box-01">
+                <h3 class="footer__title">Blog da FGA γ</h3>
+                <p classe="footer__description">©Feudo Roxo Lavanda. Todos os direitos Reservados.</p>
+            </div>
+
+            <div class="footer__box-02">
+                <h4 class="footer__subtitle">Notícias</h4>
+                <div class="footer__description">
+                    <p>Últimas Notícias</p>
+                    <p>API Utilizada</p>
+                </div>
+            </div>
+
+            <div class="footer__box-03">
+                <h4 class="footer__subtitle">Cursos</h4>
+                <div class="footer__description">
+                    <p>Cursos</p>
+                    <p>Informações Adicionais</p>
+                </div>
+            </div>
+
+            <div class="footer__box-04">
+                <h4 class="footer__subtitle">Empresas e Equipes</h4>
+                <div class="footer__description">
+                    <p>Empresas Júniores</p>
+                    <p>Equipes de Competição</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
+
 </html>

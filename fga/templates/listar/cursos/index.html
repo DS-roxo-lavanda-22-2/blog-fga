@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="{% static 'css/empresas.css' %}">
+</head>
+
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Blog da FGA γ</div>
+
+        <div>
+          <ul class="menu__list">
+            <li><a href="/listar/noticias/">Notícias</a></li>
+            <li><a href="/cursos">Cursos</a></li>
+            <li><a href="/estrutura">Estrutura</a></li>
+            <li><a href="/listar/empresas/">Empresas</a></li>
+            <li><a href="/listar/equipes/">Equipes</a></li>
+            <li><a href="/gestao">Administração</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+        <div class="title__box">
+            <h1>Cursos</h1>
+            <br>
+        </div>
+    </section>
+    <section class="empresas__container">
+        <div class="flex-container">
+            <div class="flex-items">
+                <img src="{% static 'assets/aerospace.jpg' %}" alt="" class="img__empresas">
+            </div>
+
+            <div class="flex-items">
+                <h1>Engenharia Aeroespacial</h1>
+                <br>
+                <small>Diurno</small>
+                <br>
+                <br>
+                <p>
+                    Engenharia aeroespacial é o ramo da engenharia que, com base em diversas áreas da
+                    física, como a termodinâmica, a mecânica dos fluidos, a eletrônica, a mecânica
+                    clássica e outras, lida com o projeto, construção e aplicação de aeronaves, 
+                    espaçonaves e satélites.
+                </p>
+                <br>
+                <a href="/cursos/aeroespacial"><button class="btn__saiba-mais">Saiba Mais</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="empresas__container">
+        <div class="flex-container">
+            <div class="flex-items">
+                <img src="{% static 'assets/auto.jpg' %}" alt="" class="img__empresas">
+            </div>
+
+            <div class="flex-items">
+                <h1>Engenharia Automotiva</h1>
+                <br>
+                <small>Diurno</small>
+                <br>
+                <br>
+                <p>
+                    A engenharia automotiva é um ramo da engenharia mecânica especializado nos vários
+                    tipos de veículos automóveis. Nela são aplicados elementos de ciências de base
+                    e de engenharia, elementos de engenharia mecânica, eletrotécnica, eletrónica,
+                    informática e de segurança e aperfeiçoamentos técnicos que respondem à evolução
+                    tecnológica dos automóveis, no sentido de aumentar a qualidade, competitividade 
+                    e a produtividade no setor automóvel.
+                </p>
+                <br>
+                <a href="/cursos/automotiva"><button class="btn__saiba-mais">Saiba Mais</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="empresas__container">
+        <div class="flex-container">
+            <div class="flex-items">
+                <img src="{% static 'assets/energia.jpg' %}" alt="" class="img__empresas">
+            </div>
+
+            <div class="flex-items">
+                <h1>Engenharia de Energia</h1>
+                <br>
+                <small>Diurno</small>
+                <br>
+                <br>
+                <p>
+                    A Engenharia de Energia é o ramo da engenharia que visa otimizar o aproveitamento
+                    das formas primárias de energia. O engenheiro de energia planeja, analisa,
+                    desenvolve e otimiza sistemas de geração, transporte, transmissão, distribuição 
+                    e utilização da energia.
+                </p>
+                <br>
+                <a href="/cursos/energia"><button class="btn__saiba-mais">Saiba Mais</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="empresas__container">
+        <div class="flex-container">
+            <div class="flex-items">
+                <img src="{% static 'assets/software.jpg' %}" alt="" class="img__empresas">
+            </div>
+
+            <div class="flex-items">
+                <h1>Engenharia de Software</h1>
+                <br>
+                <small>Diurno</small>
+                <br>
+                <br>
+                <p>
+                    Engenharia de software é uma área da engenharia e da computação voltada
+                    à especificação, desenvolvimento, manutenção e criação de software, com a
+                    aplicação de tecnologias e práticas de gerência de projetos e outras disciplinas,
+                    visando organização, produtividade e qualidade.
+                </p>
+                <br>
+                <a href="/cursos/software"><button class="btn__saiba-mais">Saiba Mais</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="empresas__container">
+        <div class="flex-container">
+            <div class="flex-items">
+                <img src="{% static 'assets/eletronica.jpg' %}" alt="" class="img__empresas">
+            </div>
+
+            <div class="flex-items">
+                <h1>Engenharia Eletronica</h1>
+                <br>
+                <small>Diurno</small>
+                <br>
+                <br>
+                <p>
+                    A engenharia eletrônica ou engenharia eletrónica é uma subárea da Engenharia 
+                    Elétrica que lida com grandezas elétricas de pequena amplitude e de elevadas
+                    frequências, os chamados sinais elétricos ou eletrônicos. 
+                </p>
+                <br>
+                <a href="/cursos/eletronica"><button class="btn__saiba-mais">Saiba Mais</button></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer__box">
+        <div class="footer__container">
+            <div class="footer__box-01">
+                <h3 class="footer__title">Blog da FGA γ</h3>
+                <p classe="footer__description">©Feudo Roxo Lavanda. Todos os direitos Reservados.</p>
+            </div>
+
+            <div class="footer__box-02">
+                <h4 class="footer__subtitle">Notícias</h4>
+                <div class="footer__description">
+                    <p>Últimas Notícias</p>
+                    <p>API Utilizada</p>
+                </div>
+            </div>
+
+            <div class="footer__box-03">
+                <h4 class="footer__subtitle">Cursos</h4>
+                <div class="footer__description">
+                    <p>Cursos</p>
+                    <p>Informações Adicionais</p>
+                </div>
+            </div>
+
+            <div class="footer__box-04">
+                <h4 class="footer__subtitle">Empresas e Equipes</h4>
+                <div class="footer__description">
+                    <p>Empresas Júniores</p>
+                    <p>Equipes de Competição</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

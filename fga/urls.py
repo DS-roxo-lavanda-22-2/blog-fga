@@ -13,5 +13,15 @@ urlpatterns = [
     path('listar/noticias/' ,views.ler_noticia, name='ler_noticia'),
     path('listar/equipes/' ,views.ler_equipe, name='ler_equipe'),
     path('listar/empresas/' ,views.ler_empresa, name='ler_empresa'),
+    path('cursos/', views.ler_cursos, name = 'ler_cursos'),
+    # mostrar os cursos
+    path('cursos/aeroespacial', views.show_aero, name = 'show_aero'),
+    path('cursos/automotiva', views.show_auto, name = 'show_auto'),
+    path('cursos/energia', views.show_ener, name = 'show_ener'),
+    path('cursos/eletronica', views.show_eletro, name = 'show_eletro'),
+    path('cursos/software', views.show_soft, name = 'show_soft'),
+
     path('gestao/', views.administracao, name='gestao')
+
+
 ]

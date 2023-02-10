@@ -124,9 +124,8 @@ def cad_equipe(request):
 
 #listar equipe
 def ler_equipe(request):
-    data = {}
-    data["dataset"] = Equipe.objects.all()
-    return render(request,'listar/equipe/index.html', data)
+    equipes = Equipe.objects.all()
+    return render(request,'listar/equipe/index.html', {"equipes": equipes})
 
 
 #cadastrar empresas
@@ -153,10 +152,29 @@ def cad_empresa(request):
 
 #listar empresa
 def ler_empresa(request):
-    data = {}
-    data["dataset"] = Empresa.objects.all()
-    return render(request,'listar/empresa/index.html', data)
+    empresas = Empresa.objects.all()
+    return render(request,'listar/empresa/index.html', {"empresas": empresas})
 
+#listar cursos
+def ler_cursos(request):
+    return render(request,'listar/cursos/index.html')
+
+#abrir cada curso separadamente
+def show_aero(request):
+    return render(request,'cursos/aeroespacial.html')
+def show_auto(request):
+    return render(request,'cursos/automotiva.html')
+def show_eletro(request):
+    return render(request,'cursos/eletronica.html')
+def show_ener(request):
+    return render(request,'cursos/energia.html')
+def show_soft(request):
+    return render(request,'cursos/software.html')
+
+
+
+
+#adm
 def administracao(request):
     return render(request, 'administracao/index.html')
 
