@@ -26,6 +26,24 @@ body {
     margin: 0 auto;
 }
 
+.logo {
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #21827B;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 80px;
+}
+
+.menu__list {
+    display: flex;
+    gap: 30px;
+}
+
 .sign__parent {
     display: flex;
     align-items: center;
