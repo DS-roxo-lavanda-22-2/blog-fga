@@ -151,9 +151,8 @@ def cad_empresa(request):
 
 #listar empresa
 def ler_empresa(request):
-    data = {}
-    data["dataset"] = Empresa.objects.all()
-    return render(request,'listar/empresa/index.html', data)
+    empresas = Empresa.objects.all()
+    return render(request,'listar/empresa/index.html', {"empresas": empresas})
 
 def administracao(request):
     return render(request, 'administracao/index.html')
