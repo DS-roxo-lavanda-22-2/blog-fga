@@ -1,0 +1,9 @@
+
+version: '3.0'
+
+services:
+  blog-fga: 
+    build: .
+    container_name: blog-fga
+    ports: 
+      - '8000:8000'

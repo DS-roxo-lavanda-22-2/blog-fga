@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Noticia, Equipe, Empresa
+from .models import Noticia, Equipe, Empresa, Curso
 
 
 
@@ -12,11 +12,6 @@ def index(request):
     noticias = Noticia.objects.all()[:4]
     return render(request,'home/index.html',{"noticias": noticias} )
 
-#def index(request):
-#    data = {}
-#    data['logon'] = Login.objects.all()
-#    form = login()
-#   return render(request,'login/index.html', data)
 
 #login usuario
 def novo_login(request):
@@ -143,12 +138,12 @@ def cad_empresa(request):
 
         if empresa:
             message = { 'status': -1, 'message': 'A empresa já existe!'}
-            return render(request, 'cadastrar/empresa/index.html', message)
+            return render(request, 'cadastrar/Empresa/index.html', message)
 
         empresa = Empresa.objects.create(titulo=titulo, subtitulo=subtitulo, texto=texto, redes=redes, link=link)
         empresa.save()
         message = { 'status': 1, 'message': 'Empresa cadastrada com sucesso!' }
-        return render(request, 'cadastrar/empresa/index.html', message)
+        return render(request, 'cadastrar/Empresa/index.html', message)
 
 #listar empresa
 def ler_empresa(request):
@@ -180,3 +175,12 @@ def administracao(request):
 
 def pagina_nao_encontrada(request, exception):
     return render(request, 'errors/page_not_found.html')
+
+def curso(request, nome):
+    print('nome curso: ', nome)
+    curso = Curso.objects.filter(titulo=nome).first()
+    curso.icone = 'assets/cursos/'+ curso.titulo + '-icone.jpg'
+    curso.fluxograma = 'assets/cursos/fluxo_'+ curso.titulo + '.PNG'
+    print(curso)
+
+    return render(request, 'curso/index.html', {'curso':curso})

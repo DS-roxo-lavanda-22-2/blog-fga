@@ -13,6 +13,8 @@ Ter instalado:
 
 ### Como executar
 
+
+### Aplicação
 1.  Entre no diretório blog e execute Execute as migrations.
   ~~~
   python3 manage.py makemigrations fga
@@ -31,4 +33,13 @@ Ter instalado:
 
   ~~~
   python3 manage.py createsuperuser
+  ~~~
+
+
+### Docker
+
+ 1. Construindo e subindo o serviço
+
+  ~~~
+  docker-compose up --build
   ~~~
