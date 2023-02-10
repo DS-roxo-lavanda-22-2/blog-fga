@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar noticia</title>
+</head>
+<body>
+    <form action="{% url 'del_noticia'%}" method="post">{% csrf_token %}
+        <input type="text" placeholder="Título da notícia" name="titulo">
+        <br>
+        <br>
+        <input type="submit" value="deletar">
+    </form>
+</body>
+</html>

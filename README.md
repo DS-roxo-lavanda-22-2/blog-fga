@@ -27,3 +27,8 @@ Ter instalado:
   
     Acesse: http://127.0.0.1:8000
 
+3. Criar usuário admin
+
+  ~~~
+  python3 manage.py createsuperuser
+  ~~~

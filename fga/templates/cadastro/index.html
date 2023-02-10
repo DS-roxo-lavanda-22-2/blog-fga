@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}"/>
+</head>
+<body>
+    {% if status == -1 %}
+        <div class="alert" style="padding: 20px;
+        background-color: #f44336; color: white;">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{message}}</strong> 
+        </div>
+    {% endif %}
+    {% if status == 1 %}
+        <div class="alert" style="padding: 20px;
+        background-color: green; color: white;">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{message}}</strong> 
+        </div>
+    {% endif %}
+    <div class="sign__parent">
+        
+        <div class="right">
+            <form action="{% url 'cadastro'%}" method="post">{% csrf_token %}
+                <!--Title-->
+                <section class="copy">
+                    <h2>Cadastro</h2>
+                </section>
+                <!--Email-->
+                <div class="input-container email">
+                    <label for="email">Nome</label>
+                    <input id="text" type="text" name="username">
+                </div>
+                <!--Email-->
+                <div class="input-container email">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                </div>
+                <!--Password-->
+                <div class="container-password password">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="senha">
+
+                </div>
+                <!--Sign Up-->
+                <button class="signup-btn" type="submit">
+                    Cadastrar-se
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

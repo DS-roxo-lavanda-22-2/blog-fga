@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li,
+a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    list-style: none;
+}
+
+h2 {
+    padding-top: 35px;
+    color: rgb(36, 36, 36);
+}
+
+body {
+    color: rgb(9, 9, 9);
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+}
+
+.sign__parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .copy {
+    color: black;
+    text-align: center;
+}
+
+.right .copy {
+    color: black;
+    text-align: center;
+}
+
+.right .copy p {
+    margin: 1.5em 0;
+    font-size: 0.875rem;
+}
+
+.right form {
+    width: 328px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+label {
+
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.input-container.password input {
+    position: relative;
+}
+
+.input-container.password i {
+    position: absolute;
+    top: 42px;
+    right: 16px;
+}
+
+.signup-btn {
+
+    width: 100%;
+    background: var(--primary-blue);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signup-btn {
+    background: #21827B;
+    cursor: pointer;
+}
